@@ -86,6 +86,7 @@ var checkHp = function () {
             monsterDefeated++
             document.getElementById("hpBar").style.width = "0px";
             document.getElementById("userInput").disabled= true;
+            document.getElementById("userInput").display= "none";
         }
     }
 }
@@ -100,11 +101,18 @@ var testTime = function (){
         // if time is still running and monster hasnt been defeated
         if ((seconds == -1) && monsterDefeated<3) {
             clearInterval(runTimer);
+            document.getElementById("userInput").display= "none";
             //add message over lay : virus has won
             loserMessage ("Oh no! The viruses have destroyed your computer!! <br> Click anywhere to play again.");
+            // add losing music
+            var lose = new Audio ("music/lose.mp3");
+            lose.play();
         } else if ((seconds >= 1) && monsterDefeated ==3) {
             clearInterval(runTimer);
             winnerMessage ("Congrats! You have saved your computer! <br> Click anywhere to play again.");
+            document.getElementById("userInput").display= "none";
+            var win = new Audio ("music/win.mp3");
+            win.play();
         }
 
     }
@@ -134,25 +142,16 @@ var startGame = function (event) {
     setTimeout(countDown,1000, 3);
     setTimeout(countDown,2250, 2);
     setTimeout(countDown,3500, 1);
-    setTimeout(displayInput, 4650);
+    setTimeout(displayInput, 4850);
     setTimeout(countDown,4750, "GO!");
     //timer function goes here!
     setTimeout(testTime,6000);
     //change the innerHTML into wordArray [0];
-    setTimeout(countDown,6500, wordArray[Math.floor(Math.random()*wordArray.length)]);
-    //remove event listener so that player wont touch it
-    // document.getElementById('start').removeEventListener('click', startGame);
+    setTimeout(countDown,6000, wordArray[Math.floor(Math.random()*wordArray.length)]);
     // enable event listner again after 60 seconds
     setTimeout(start,60000);
 }
 
-//write a function to clear DOM when restart
-// var clearDOM = function () {
-//     document.getElementById("newWord").innerHTML =" ARE YOU READY"
-//     document.getElementById('userInput').innerHTML ="Start typing...";
-//     document.getElementById("sec").innerHTML = "60 secs";
-//     document.getElementById("keepscore").innerHTML="0"
-// }
 
 // adding event listener to the input function
 var userInput = document.getElementById('userInput').addEventListener('change', wordInput);
