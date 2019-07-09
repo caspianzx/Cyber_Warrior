@@ -101,16 +101,21 @@ var testTime = function (){
         // if time is still running and monster hasnt been defeated
         if ((seconds == -1) && monsterDefeated<3) {
             clearInterval(runTimer);
-            document.getElementById("userInput").display= "none";
+            document.getElementById("userInput").style.display= "none";
             //add message over lay : virus has won
             loserMessage ("Oh no! The viruses have destroyed your computer!! <br> Click anywhere to play again.");
+            //pause countdown music
+            audio.pause();
             // add losing music
             var lose = new Audio ("music/lose.mp3");
             lose.play();
         } else if ((seconds >= 1) && monsterDefeated ==3) {
             clearInterval(runTimer);
             winnerMessage ("Congrats! You have saved your computer! <br> Click anywhere to play again.");
-            document.getElementById("userInput").display= "none";
+            //pause countdown music
+            audio.pause();
+            document.getElementById("userInput").style.display= "none";
+            //play win music
             var win = new Audio ("music/win.mp3");
             win.play();
         }
@@ -119,6 +124,9 @@ var testTime = function (){
     var runTimer = setInterval(timer, 1000);
 }
 
+// function for audio
+
+var audio = new Audio('music/countdown.mp3');
 
 //writing a countDown function to input 3, 2, 1
 var countDown = function (second) {
@@ -136,7 +144,6 @@ var startGame = function (event) {
     document.getElementById("overlay2").style.display ="none";
     // clearDOM();
     //start audio when game starts
-    var audio = new Audio('music/countdown.mp3');
     audio.play();
     //set 3 2 1 timer
     setTimeout(countDown,750, 3);
@@ -158,7 +165,7 @@ var userInput = document.getElementById('userInput').addEventListener('change', 
 
 //add event listener to overlay 2
 var start = function (){
-   document.getElementById('overlay2').addEventListener('click', startGame);
+ document.getElementById('overlay2').addEventListener('click', startGame);
 };
 //enable event listener
 start ();
