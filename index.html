@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Warrior</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        Cyber Warrior
+    </header>
+
+    <div class="container">
+        <div id="hpBar"><span class="healthbar"> HP</div>
+
+            <div id="fullHpBar"></div>
+
+            <img src="image/monster1.png" id= "monster1" class="shake-slow shake-constant">
+
+            <div id="newWord"> ARE YOU READY</div>
+
+            <input type="text" id="userInput" placeholder="Start typing..." class =""> </input>
+
+
+            <div id="timer" class="counter"> Time: <span id= "sec">60 secs</span> </div>
+
+        </div>
+
+
+        <div id="overlay" onClick="document.location.reload(true)">
+            <!-- <div id="overlayText">YOU WIN!</div> -->
+        </div>
+
+        <div id="overlay2">
+            <div class ="intro">
+                <div id= "alert" class ="glitch" data-text="glitch"> Instructions</div> <br>
+
+                <div class ="border1">
+                    3 viruses have invaded your computer! <br><br>
+                    You have only <span class="sixty">60 seconds </span> to destroy them by typing the given words or else they will destroy your computer! <br> <br>
+                    Click anywhere to begin.
+                </div>
+            </div>
+        </div>
+
+        <div id="overlay3">
+            <div class ="main">
+                <div id= "welcome" > welcome</div>
+                <div class= "cyber"> Cyber Warrior </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
