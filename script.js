@@ -139,15 +139,15 @@ var startGame = function (event) {
     var audio = new Audio('music/countdown.mp3');
     audio.play();
     //set 3 2 1 timer
-    setTimeout(countDown,1000, 3);
-    setTimeout(countDown,2250, 2);
-    setTimeout(countDown,3500, 1);
-    setTimeout(displayInput, 4850);
-    setTimeout(countDown,4750, "GO!");
+    setTimeout(countDown,750, 3);
+    setTimeout(countDown,2000, 2);
+    setTimeout(countDown,3250, 1);
+    setTimeout(displayInput, 4650);
+    setTimeout(countDown,4500, "GO!");
     //timer function goes here!
-    setTimeout(testTime,6000);
+    setTimeout(testTime,5000);
     //change the innerHTML into wordArray [0];
-    setTimeout(countDown,6000, wordArray[Math.floor(Math.random()*wordArray.length)]);
+    setTimeout(countDown,5750, wordArray[Math.floor(Math.random()*wordArray.length)]);
     // enable event listner again after 60 seconds
     setTimeout(start,60000);
 }
