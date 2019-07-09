@@ -197,18 +197,19 @@ var winnerText = document.createElement("span");
 // span text will be testing testing
 winnerText.innerHTML = result;
 // get document ID by overlay
-var overlay = document.getElementById("overlay");
+var overlay = document.getElementById("overlay4");
 //append span element to overlay div
 overlay.appendChild(winnerText);
 // div display will become block
 overlay.style.display = "block";
 // add click event listener to overlay display, and make display back to none.
-document.getElementById("overlay").addEventListener("click", function () {
+document.getElementById("overlay4").addEventListener("click", function () {
     overlay.style.display = "none";
     overlay.removeChild(winnerText);
 })
 }
 
+// click overlay 3 to make it disappear
 
 document.getElementById("overlay3").addEventListener("click", function () {
     overlay3.style.display = "none";

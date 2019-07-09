@@ -101,6 +101,37 @@ p.instruction {
   z-index: 1;
 }
 
+#overlay4 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("image/crack.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0.5);
+  cursor: pointer;
+  z-index: 2;
+}
+
+#overlay4 span {
+	font-family: "futura", sans serif;
+	font-size: 90px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  z-index: 1;
+}
+
  #overlay2 {
  	display: block;
   position: fixed;
