@@ -151,7 +151,7 @@ p.instruction {
 }
 
 .intro {
-	font-family: "futura", sans serif;
+	font-family: "futura", sans-serif;
 	text-align: center;
 	width: 800px;
 	font-size: 30px;
@@ -167,7 +167,7 @@ p.instruction {
 	box-sizing: border-box;
 	padding: 35px;
 	font-size: 25px;
-	font-family: "futura";
+	font-family: "futura", sans-serif;
 	font-weight: lighter;
 }
 
