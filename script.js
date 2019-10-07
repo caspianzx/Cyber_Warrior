@@ -95,13 +95,16 @@ var checkHp = function () {
 
 // function for countdown timer
 var testTime = function (){
+    //60s timer
     var seconds = 60;
+    //inner timer to -1 second
     var timer = function () {
         document.getElementById("sec").innerHTML = seconds + " secs";
         seconds--;
         // if time is still running and monster hasnt been defeated
         if ((seconds == -1) && monsterDefeated<3) {
             clearInterval(runTimer);
+            //disable input
             document.getElementById("userInput").style.display= "none";
             //add message over lay : virus has won
             loserMessage ("Oh no! The viruses have destroyed your computer!! <br> Click anywhere to play again.");
@@ -120,8 +123,9 @@ var testTime = function (){
             var win = new Audio ("music/win.mp3");
             win.play();
         }
-
     }
+
+    //intervals to invoke timer function every 1000
     var runTimer = setInterval(timer, 1000);
 }
 
@@ -129,7 +133,7 @@ var testTime = function (){
 
 var audio = new Audio('music/countdown.mp3');
 
-//writing a countDown function to input 3, 2, 1
+//writing a countDown function with 3, 2, 1, go! as argument, followed by new words
 var countDown = function (second) {
     document.getElementById("newWord").innerHTML= second;
 }
@@ -140,7 +144,7 @@ var displayInput = function () {
     document.getElementById("userInput").focus();
 }
 
-//write a function to start game
+//write a function to start game with click event
 var startGame = function (event) {
     document.getElementById("overlay2").style.display ="none";
     // clearDOM();

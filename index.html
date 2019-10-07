@@ -4,28 +4,24 @@
     <title>Cyber Warrior</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-
     <header>
         Cyber Warrior
     </header>
-
     <div class="container">
         <div id="hpBar"><span class="healthbar"> HP</div>
-
+            <!-- HP bar made using CSS to make it a full Hp bar -->
             <div id="fullHpBar"></div>
-
+            <!-- monster image will change when Hp = 0 -->
             <img src="image/monster1.png" id= "monster1" class="shake-slow shake-constant">
 
             <div id="newWord"> ARE YOU READY</div>
-
+            <!-- user input -->
             <input type="text" id="userInput" placeholder="Start typing..." class =""> </input>
 
-
+            <!-- countdown timer using js -->
             <div id="timer" class="counter"> Time: <span id= "sec">60 secs</span> </div>
 
-        </div>
 
         <div id="overlay4" onClick="document.location.reload(true)">
 
@@ -33,11 +29,10 @@
         <div id="overlay" onClick="document.location.reload(true)">
             <!-- <div id="overlayText">YOU WIN!</div> -->
         </div>
-
+<!-- game instructions -->
         <div id="overlay2">
             <div class ="intro">
                 <div id= "alert" class ="glitch" data-text="glitch"> Instructions</div> <br>
-
                 <div class ="border1">
                     3 viruses have invaded your computer! <br><br>
                     You have only <span class="sixty">60 seconds </span> to destroy them by typing the given words or else they will destroy your computer! <br> <br>
@@ -45,14 +40,13 @@
                 </div>
             </div>
         </div>
-
+<!-- game intro page -->
         <div id="overlay3">
             <div class ="main">
                 <div id= "welcome" > welcome</div>
                 <div class= "cyber"> Cyber Warrior </div>
             </div>
         </div>
-
     </div>
 
     <script type="text/javascript" src="script.js"></script>
