@@ -1,4 +1,4 @@
-var wordArray = ["log", "hit", "city", "ant", "cut", "myth", "even", "crop", "petty", "hover", "siege", "europe", "resort", "mosaic", "episode", "cunning", "unaware", "guerilla", "champagne", "hemisphere", "government", "acquisition", "hospitality", "conventional", "jurisdiction", "representative", "finance", "nuclear", "regular", "liberty", "minimize", "spectrum", "feminine", "precedent", "ostracize", "beautiful", "franchise", "satisfied", "deviation", "apparatus", "economics", "permission", "exaggerate", "conception", "absorption", "diplomatic", "ring", "tire", "boom", "will", "wall", "slam", "loss", "sour", "hear", "roof", "pole", "slam", "hook", "just", "belle", "belle", "bloom", "ride", "side", "pool", "well", "know","save", "glow", "bend", "gain","turn","tube", "suit","fork", "king", "tape", "high","rent","will","risk", "back", "year", "meat", "park", "lump", "belt", "mail","duty","lake","wood", "just", "spin",  "glow", "sail", "item", "vote", "step", "fool", "drum", "iron", "nail", "foot", "cold", "pass", "lane", "deck", "love", "draw", "dorm", "order", "guilt", "speed", "scale", "value", "bench", "debut", "night", "bless", "fever", "world", "stock", "trial", "video", "study", "alive", "great", "salad" ];
+var wordArray = ["log", "hit", "city", "ant", "cut" ];
 
 
 
@@ -12,6 +12,7 @@ var wordInput = function (event) {
     var correctOutline = document.getElementById("userInput");
     correctOutline.style.outlineColor = "#5E9ED6";
     var checkInput = document.getElementById("userInput").value;
+
     if(checkInput == document.getElementById("newWord").innerHTML) {
         //function to reduce hp bar by 30px and give monster a hard shake.
         damage1();
@@ -170,23 +171,23 @@ var start = function (){
 //enable event listener
 start ();
 
-//write a function to display message as overlay. should be using DOM manipulation and query selector to create overall inlays
+//write a function to display winner message as an overlay using DOM manipulation
 var winnerMessage = function (result) {
-// create a span element
-var winnerText = document.createElement("span");
-// span text will be testing testing
-winnerText.innerHTML = result;
-// get document ID by overlay
-var overlay = document.getElementById("overlay");
-//append span element to overlay div
-overlay.appendChild(winnerText);
-// div display will become block
-overlay.style.display = "block";
-// add click event listener to overlay display, and make display back to none.
-document.getElementById("overlay").addEventListener("click", function () {
-    overlay.style.display = "none";
-    overlay.removeChild(winnerText);
-})
+    // create a span element
+    var winnerText = document.createElement("span");
+    // span text will be testing testing
+    winnerText.innerHTML = result;
+    // get document ID by overlay
+    var overlay = document.getElementById("overlay");
+    //append span element to overlay div
+    overlay.appendChild(winnerText);
+    // div display will turn from none to block
+    overlay.style.display = "block";
+    // add click event listener to overlay display, and make display back to none.
+    document.getElementById("overlay").addEventListener("click", function () {
+        overlay.style.display = "none";
+        overlay.removeChild(winnerText);
+    })
 }
 
 
